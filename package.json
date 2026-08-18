@@ -1,0 +1,26 @@
+{
+  "name": "enoch-tetteh-portfolio",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@lucide/vue": "^1.31.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@vueuse/core": "^14.4.0",
+    "@vueuse/nuxt": "^14.4.0",
+    "typescript": "5.8.2",
+    "vue-tsc": "2.2.8"
+  }
+}
