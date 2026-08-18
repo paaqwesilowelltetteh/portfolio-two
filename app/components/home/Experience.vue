@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { Briefcase, Calendar, MapPin, Award, CheckCircle2 } from '@lucide/vue'
 import { experiences } from '~/data/portfolio'
+
+const yearsOfExperience = computed(() => {
+  return new Date().getFullYear() - 2019
+})
 </script>
 
 <template>
@@ -14,7 +18,7 @@ import { experiences } from '~/data/portfolio'
         Professional Experience
       </h2>
       <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-        6+ years of building production-grade software, leading developer teams, and maintaining mission-critical backend systems.
+        {{ yearsOfExperience }}+ years of building production-grade software, leading developer teams, and maintaining mission-critical backend systems.
       </p>
     </div>
 

@@ -19,6 +19,27 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
+
+const activeHash = ref('')
+
+const updateActiveHash = () => {
+  activeHash.value = window.location.hash
+}
+
+onMounted(() => {
+  updateActiveHash()
+
+  window.addEventListener('hashchange', updateActiveHash)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('hashchange', updateActiveHash)
+})
+
+const isActivePage = (hash: string) => {
+  return activeHash.value === hash
+}
+
 function closeMobile() {
   mobileOpen.value = false
 }
@@ -50,6 +71,7 @@ function closeMobile() {
           :key="link.href"
           :href="link.href"
           class="px-3 py-1.5 rounded-lg hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-dark-surface/60 transition-colors"
+          :class="{ 'text-emerald-600 dark:text-emerald-400 bg-slate-100 dark:bg-dark-surface/60': isActivePage(link.href) }"
         >
           {{ link.label }}
         </a>

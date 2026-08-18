@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { yearsOfExperience } from './app/data/portfolio'
+
 export default (defineNuxtConfig as any)({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -23,7 +25,7 @@ export default (defineNuxtConfig as any)({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Enoch Tetteh is a Full-Stack Software Developer and Backend & Laravel Specialist with 6+ years of experience building scalable APIs, production web applications, payment systems, content platforms, and modern Vue/Nuxt applications.',
+          content: 'Enoch Tetteh is a Full-Stack Software Developer and Backend & Laravel Specialist with ' + yearsOfExperience + '+ years of experience building scalable APIs, production web applications, payment systems, content platforms, and modern Vue/Nuxt applications.',
         },
         { name: 'author', content: 'Enoch Tetteh' },
         { name: 'theme-color', content: '#10b981' },
@@ -31,13 +33,13 @@ export default (defineNuxtConfig as any)({
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://enoch-portfolio.vercel.app/' },
         { property: 'og:title', content: 'Enoch Tetteh | Full-Stack Software Developer & Laravel Specialist' },
-        { property: 'og:description', content: 'Software developer with 6+ years of experience building production software with PHP, Laravel, Vue, Nuxt, TypeScript, databases, and cloud infrastructure.' },
+        { property: 'og:description', content: 'Software developer with ' + yearsOfExperience + '+ years of experience building production software with PHP, Laravel, Vue, Nuxt, TypeScript, databases, and cloud infrastructure.' },
         { property: 'og:image', content: 'https://enoch-portfolio.vercel.app/images/og-image.jpg' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:url', content: 'https://enoch-portfolio.vercel.app/' },
         { name: 'twitter:title', content: 'Enoch Tetteh | Full-Stack Software Developer & Laravel Specialist' },
-        { name: 'twitter:description', content: 'Software developer with 6+ years of experience building production software with PHP, Laravel, Vue, Nuxt, TypeScript, databases, and cloud infrastructure.' },
+        { name: 'twitter:description', content: 'Software developer with ' + yearsOfExperience + '+ years of experience building production software with PHP, Laravel, Vue, Nuxt, TypeScript, databases, and cloud infrastructure.' },
         { name: 'twitter:image', content: 'https://enoch-portfolio.vercel.app/images/og-image.jpg' },
       ],
       link: [

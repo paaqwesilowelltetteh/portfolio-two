@@ -1,6 +1,6 @@
 # Enoch Tetteh — Developer Portfolio Website
 
-> Official developer portfolio of **Enoch Tetteh** — Full-Stack Software Developer & Backend / Laravel Specialist with 6+ years of professional experience building production web applications, APIs, payment systems, streaming platforms, and enterprise solutions.
+> Official developer portfolio of **Enoch Tetteh** — Full-Stack Software Developer & Backend / Laravel Specialist with 7+ years of professional experience building production web applications, APIs, payment systems, streaming platforms, and enterprise solutions.
 
 [![Nuxt 4](https://img.shields.io/badge/Nuxt-4.x-00DC82?logo=nuxt.js&logoColor=white)](https://nuxt.com)
 [![Vue 3](https://img.shields.io/badge/Vue-3.x-4FC08D?logo=vue.js&logoColor=white)](https://vuejs.org)
@@ -16,7 +16,7 @@
 - **Frontend Capabilities**: Vue.js (Vue 3), Nuxt (Nuxt 4), TypeScript, Tailwind CSS, Blade, Vite.
 - **Core Philosophy**: `Requirement → Specification → Architecture → Database → API → Implementation → Deployment → Monitoring → Improvement`
 - **Location**: Ghana
-- **Experience**: 6+ Years
+- **Experience**: 7+ Years
 - **Contact**: `mrenochtetteh@outlook.com` | `+233 241372895` / `+233 204152063`
 - **Profiles**: [GitHub](https://github.com/paaqwesilowelltetteh) • [LinkedIn](https://www.linkedin.com/in/enoch-tetteh-b1b6371bb/)
 

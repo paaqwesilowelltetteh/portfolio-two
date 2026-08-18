@@ -1,3 +1,6 @@
+export const yearsOfExperience = computed(() => {
+  return new Date().getFullYear() - 2019
+})
 export interface ProjectItem {
   id: string
   name: string
@@ -42,9 +45,9 @@ export const personalInfo = {
   name: 'Enoch Tetteh',
   title: 'Full-Stack Software Developer | Backend & Laravel Specialist',
   headline: 'Building scalable backend systems, robust APIs, payment integrations, and modern web applications.',
-  bio: 'I am a software developer with 6+ years of professional experience building production web applications, APIs, payment systems, content platforms, and business solutions. My strongest area is backend engineering with PHP and Laravel, but I work across the full stack and have experience building modern interfaces with Vue.js, Nuxt, TypeScript, and Tailwind CSS.',
+  bio: 'I am a software developer with 7+ years of professional experience building production web applications, APIs, payment systems, content platforms, and business solutions. My strongest area is backend engineering with PHP and Laravel, but I work across the full stack and have experience building modern interfaces with Vue.js, Nuxt, TypeScript, and Tailwind CSS.',
   location: 'Ghana',
-  yearsOfExperience: '6+',
+  yearsOfExperience: yearsOfExperience.value + '+',
   email: 'mrenochtetteh@outlook.com',
   phones: ['+233 241372895', '+233 204152063'],
   github: 'https://github.com/paaqwesilowelltetteh',
@@ -57,7 +60,7 @@ export const personalInfo = {
 
 export const impactStats = [
   {
-    value: '6+',
+    value: yearsOfExperience.value + '+',
     label: 'Years Experience',
     subtext: 'Building production software & APIs',
   },

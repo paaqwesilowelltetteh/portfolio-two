@@ -4,6 +4,10 @@ import GithubIcon from '~/components/ui/icons/GithubIcon.vue'
 import LinkedinIcon from '~/components/ui/icons/LinkedinIcon.vue'
 import { personalInfo } from '~/data/portfolio'
 import { NuxtImg } from '#components'
+
+const yearsOfExperience = computed(() => {
+  return new Date().getFullYear() - 2019
+})
 </script>
 
 <template>
@@ -17,7 +21,7 @@ import { NuxtImg } from '#components'
         <!-- Verification Pill -->
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Full-Stack Software Developer • 6+ Years Experience</span>
+          <span>Full-Stack Software Developer • {{ yearsOfExperience }}+ Years Experience</span>
         </div>
 
         <div class="space-y-2">
@@ -34,7 +38,7 @@ import { NuxtImg } from '#components'
         </p>
 
         <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-          6+ years of professional experience building production software with PHP, Laravel, Vue, Nuxt, TypeScript, relational databases, and cloud infrastructure.
+          {{ yearsOfExperience }}+ years of professional experience building production software with PHP, Laravel, Vue, Nuxt, TypeScript, relational databases, and cloud infrastructure.
         </p>
 
         <!-- CTA Action Buttons -->
@@ -102,7 +106,7 @@ import { NuxtImg } from '#components'
                 class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 loading="eager"
               />
-              
+
               <!-- Gradient Overlay at bottom of photo -->
               <div class="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-transparent to-transparent"></div>
 
