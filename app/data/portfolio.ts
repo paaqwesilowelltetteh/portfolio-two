@@ -51,7 +51,7 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/enoch-tetteh-b1b6371bb/',
   portfolioUrl: 'https://enoch-portfolio.vercel.app/',
   cvPath: '/Enoch_Tetteh_CV.pdf',
-  profileImage: '/images/enoch-tetteh-profile-2.jpg',
+  profileImage: '/images/pi1.png',
   profileImageAlt: 'Enoch Tetteh — Full-Stack Software Developer',
 }
 
@@ -212,7 +212,7 @@ export const projects: ProjectItem[] = [
     ],
     liveUrl: 'http://trypebble.com',
     cmsUrl: 'http://cms.trypebble.com',
-    image: '/images/pebble-thumbnail.jpg',
+    image: '/images/pebble-thumbnail.png',
     featured: true,
   },
   {
@@ -242,7 +242,7 @@ export const projects: ProjectItem[] = [
     ],
     liveUrl: 'https://nuxt-bearer-auth.vercel.app/',
     githubUrl: 'https://github.com/paaqwesilowelltetteh/nuxt-bearer-auth',
-    image: '/images/open-source-thumbnail.jpg',
+    image: '/images/nuxt-bearer-auth.png',
     featured: true,
     isOpenSource: true,
   },
@@ -271,7 +271,7 @@ export const projects: ProjectItem[] = [
       'Architected and built core RESTful APIs for commodity lifecycle events and audit logging.',
       'Coordinated technical deliverables and collaborated closely with key project stakeholders and SME leaders.',
     ],
-    image: '/images/traceable-thumbnail.jpg',
+    // image: '/images/traceable.png',
     featured: true,
   },
   {
@@ -298,6 +298,7 @@ export const projects: ProjectItem[] = [
       'Maintained server uptime and assisted municipal departments with digital services support.',
     ],
     liveUrl: 'https://wgma.gov.gh',
+    image: '/images/wgma-website.png',
     featured: true,
   },
   {
@@ -324,6 +325,7 @@ export const projects: ProjectItem[] = [
       'Ensured responsive performance across mobile and desktop devices.',
     ],
     liveUrl: 'https://abnma.gov.gh/',
+    image: '/images/abnma-website.png',
     featured: true,
   },
   {

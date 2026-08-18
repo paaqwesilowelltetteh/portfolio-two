@@ -6,6 +6,7 @@ export default (defineNuxtConfig as any)({
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
+    '@nuxt/image',
   ],
 
   app: {

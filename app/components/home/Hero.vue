@@ -3,6 +3,7 @@ import { ArrowRight, FileText, Mail, Server, Zap } from '@lucide/vue'
 import GithubIcon from '~/components/ui/icons/GithubIcon.vue'
 import LinkedinIcon from '~/components/ui/icons/LinkedinIcon.vue'
 import { personalInfo } from '~/data/portfolio'
+import { NuxtImg } from '#components'
 </script>
 
 <template>
@@ -95,7 +96,7 @@ import { personalInfo } from '~/data/portfolio'
           <!-- Outer Decorative Card -->
           <div class="relative rounded-3xl p-2 bg-gradient-to-b from-emerald-500/20 via-slate-200/50 to-slate-200/20 dark:from-emerald-500/30 dark:via-dark-border dark:to-dark-card border border-emerald-500/30 shadow-card-dark">
             <div class="overflow-hidden rounded-2xl bg-slate-900 relative aspect-square">
-              <img
+              <NuxtImg
                 :src="personalInfo.profileImage"
                 :alt="personalInfo.profileImageAlt"
                 class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
