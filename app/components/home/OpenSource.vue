@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { Sparkles, ArrowRight, ShieldCheck, Database, RefreshCw } from '@lucide/vue'
+import { Sparkles, ArrowRight, ShieldCheck, Database, RefreshCw, ExternalLink } from '@lucide/vue'
 import GithubIcon from '~/components/ui/icons/GithubIcon.vue'
 </script>
 
 <template>
   <section id="opensource" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
     <div class="p-8 sm:p-12 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-white dark:via-dark-card to-white dark:to-dark-bg space-y-8 shadow-card-light dark:shadow-card-dark">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div class="space-y-2">
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
             <Sparkles class="w-3.5 h-3.5" />
-            <span>Open Source Tooling</span>
+            <span>Open Source Developer Tooling</span>
           </div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Nuxt Bearer Auth
@@ -20,16 +20,29 @@ import GithubIcon from '~/components/ui/icons/GithubIcon.vue'
           </p>
         </div>
 
-        <a
-          href="https://github.com/paaqwesilowelltetteh/nuxt-bearer-auth"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="shrink-0 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-black font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-all"
-        >
-          <GithubIcon class="w-4 h-4" />
-          <span>View on GitHub</span>
-          <ArrowRight class="w-4 h-4" />
-        </a>
+        <!-- Action Links: Live Website & GitHub -->
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <a
+            href="https://nuxt-bearer-auth.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-glow-primary transition-all active:scale-95"
+          >
+            <span>Live Website</span>
+            <ExternalLink class="w-4 h-4" />
+          </a>
+
+          <a
+            href="https://github.com/paaqwesilowelltetteh/nuxt-bearer-auth"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-black font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm transition-all"
+          >
+            <GithubIcon class="w-4 h-4" />
+            <span>GitHub</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
       </div>
 
       <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-3xl">

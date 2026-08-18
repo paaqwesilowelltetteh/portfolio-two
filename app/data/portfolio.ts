@@ -1,17 +1,21 @@
 export interface ProjectItem {
   id: string
   name: string
+  category: 'Production' | 'Open Source' | 'Technical Lead' | 'Government' | 'Freelance' | 'Internal System'
+  categoryType: 'streaming' | 'developer-tool' | 'enterprise' | 'civic' | 'communication' | 'inventory'
   tagline: string
-  description: string
+  shortDescription: string
+  overview: string
   myRole: string
   teamSize?: string
   technologies: string[]
-  impact: string
+  impact?: string
+  majorFeatures?: string[]
   workPoints: string[]
   liveUrl?: string
   cmsUrl?: string
   githubUrl?: string
-  image: string
+  image?: string
   featured: boolean
   isOpenSource?: boolean
 }
@@ -169,8 +173,11 @@ export const projects: ProjectItem[] = [
   {
     id: 'pebble',
     name: 'Pebble',
+    category: 'Production',
+    categoryType: 'streaming',
     tagline: 'Digital Content & Streaming Platform (10,000+ Subscribers)',
-    description: 'A digital content and streaming platform supporting podcasts, audio content, movies, series, creators, subscriptions, and premium content experiences.',
+    shortDescription: 'Digital content and streaming platform supporting podcasts, movies, audio, series, subscriptions, and creator monetization for 10,000+ subscribers.',
+    overview: 'Pebble is a full-featured digital media and streaming platform tailored for creators and audiences, supporting audio content, podcasts, movies, serial video, subscriptions, and pay-per-view experiences with automated creator earnings distribution.',
     myRole: 'Software Developer (Backend & Full-Stack)',
     technologies: [
       'PHP',
@@ -187,13 +194,21 @@ export const projects: ProjectItem[] = [
       'Nginx',
       'Linux',
     ],
-    impact: '10,000+ active subscribers streaming content and creators managing monetized channels.',
+    impact: '10,000+ active subscribers streaming digital media and creators managing monetized channels.',
+    majorFeatures: [
+      'Podcast & audio streaming player with playlist management',
+      'Video and movie on-demand delivery infrastructure',
+      'Subscription billing, creator earnings calculation & automated payouts',
+      'Large media upload workflows with queue-based transcoding pipelines',
+      'Content discovery feeds and personalized recommendation engines',
+      'Real-time streaming metrics and live listener interactions via WebSockets',
+    ],
     workPoints: [
-      'Contributed to the engineering of Laravel backend APIs and high-concurrency streaming endpoints.',
-      'Implemented subscription billing, creator earnings calculation, and automated payout disbursements.',
-      'Built queue-based media processing workflows for large video and audio uploads.',
-      'Optimized content delivery performance using Redis caching and Laravel Octane / FrankenPHP.',
-      'Built responsive interfaces and content management dashboards in Nuxt and TypeScript.',
+      'Contributed to the engineering of high-concurrency Laravel backend REST APIs and streaming endpoints.',
+      'Implemented subscription billing, creator revenue calculations, and automated Paystack payout disbursements.',
+      'Built queue-based media processing workflows for large video and audio file uploads.',
+      'Optimized endpoint throughput using Redis caching, Laravel Octane, and FrankenPHP on Linux servers.',
+      'Developed responsive Nuxt interfaces and content management administrative portals in TypeScript.',
     ],
     liveUrl: 'http://trypebble.com',
     cmsUrl: 'http://cms.trypebble.com',
@@ -201,41 +216,165 @@ export const projects: ProjectItem[] = [
     featured: true,
   },
   {
+    id: 'nuxt-bearer-auth',
+    name: 'Nuxt Bearer Auth',
+    category: 'Open Source',
+    categoryType: 'developer-tool',
+    tagline: 'Server-Side Authentication Infrastructure for Nuxt 4',
+    shortDescription: 'An open-source Nuxt authentication package that simplifies bearer-token authentication by keeping tokens in server Redis sessions and providing secure HTTP-only cookies.',
+    overview: 'Nuxt Bearer Auth eliminates the common SPA security vulnerability of storing sensitive API bearer tokens in browser localStorage. It provides a turnkey 4-tier token isolation architecture (Browser Cookie ↔ Nuxt Server ↔ Redis ↔ Backend API) with synchronous SSR state hydration and silent token refresh.',
+    myRole: 'Creator & Maintainer',
+    technologies: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Redis', 'Nitro', 'Node.js', 'Tailwind CSS', 'Open Source'],
+    impact: 'Empowers Nuxt developers to build zero-trust, SSR-aware authentication layers for any bearer-token API (Laravel Sanctum, FastAPI, Django, Express).',
+    majorFeatures: [
+      'Zero token exposure to browser JavaScript / localStorage',
+      'Server-side Redis session storage with configurable TTL',
+      'Synchronous SSR authentication state hydration without layout flicker',
+      'Silent token refresh executed entirely server-side',
+      'Multi-device session tracking and remote revocation endpoints',
+      'Integrated CSRF protection via nuxt-csurf across mutating requests',
+    ],
+    workPoints: [
+      'Identified the common SPA vulnerability of storing bearer tokens in browser memory/storage.',
+      'Architected 4-tier token isolation model and authored full TypeScript composables (useBearerAuth).',
+      'Engineered Nitro server handlers, session helpers, and Redis schema indexing.',
+      'Authored complete developer documentation, architecture sequence diagrams, and live playground.',
+    ],
+    liveUrl: 'https://nuxt-bearer-auth.vercel.app/',
+    githubUrl: 'https://github.com/paaqwesilowelltetteh/nuxt-bearer-auth',
+    image: '/images/open-source-thumbnail.jpg',
+    featured: true,
+    isOpenSource: true,
+  },
+  {
     id: 'traceable',
     name: 'Traceable',
+    category: 'Technical Lead',
+    categoryType: 'enterprise',
     tagline: 'Agricultural Traceability Solution for USAID-Sponsored SMEs',
-    description: 'A comprehensive supply chain traceability platform developed for 5 agricultural SMEs sponsored by USAID, tracking commodities from farm-level collection to export.',
+    shortDescription: 'Comprehensive supply chain traceability platform developed for 5 agricultural SMEs sponsored by USAID, enabling verifiable commodity tracking from farm collection to export.',
+    overview: 'Traceable was developed under USAID sponsorship to provide end-to-end supply chain provenance tracking for 5 agricultural small and medium enterprises (SMEs), capturing origin farm data, quality grading, commodity processing milestones, and export audit trails.',
     myRole: 'Software Developer / Technical Lead',
     teamSize: 'Led a team of 5 developers',
     technologies: ['PHP', 'Laravel', 'REST APIs', 'MySQL', 'Vue.js', 'Redis', 'Linux'],
-    impact: 'Enabled 5 USAID-backed agricultural SMEs to ensure verifiable supply chain compliance and commodity provenance.',
+    impact: 'Enabled 5 USAID-backed agricultural SMEs to ensure verifiable supply chain compliance, international export certification, and provenance records.',
+    majorFeatures: [
+      'Farm-to-export commodity batch tracking and milestone recording',
+      'Quality inspection, moisture level, and grade recording modules',
+      'Unique batch identification and traceability chain audits',
+      'Stakeholder reporting and export certification compliance exports',
+      'Multi-tenant SME data segregation with secure access control',
+    ],
     workPoints: [
-      'Led a team of 5 developers through full software development lifecycle from requirements to deployment.',
-      'Authored technical specifications and designed relational database architecture.',
-      'Designed and developed core RESTful APIs for commodity batch tracking and audit logs.',
-      'Coordinated technical deliverables and collaborated closely with key project stakeholders.',
+      'Led a team of 5 developers across the complete software development lifecycle from requirements to deployment.',
+      'Authored technical specifications and designed relational database architecture in MySQL.',
+      'Architected and built core RESTful APIs for commodity lifecycle events and audit logging.',
+      'Coordinated technical deliverables and collaborated closely with key project stakeholders and SME leaders.',
     ],
     image: '/images/traceable-thumbnail.jpg',
     featured: true,
   },
   {
-    id: 'nuxt-bearer-auth',
-    name: 'Nuxt Bearer Auth',
-    tagline: 'Open-Source Authentication Package for Nuxt 4',
-    description: 'An open-source Nuxt authentication package designed to simplify bearer-token authentication in Nuxt applications by keeping API tokens securely on the server with Redis-backed sessions and HTTP-only cookies.',
-    myRole: 'Creator & Maintainer',
-    technologies: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Redis', 'Nitro', 'Node.js', 'Open Source'],
-    impact: 'Provides Nuxt developers with a turnkey, zero-token-leakage authentication layer for bearer-token backend APIs.',
-    workPoints: [
-      'Identified the common SPA vulnerability of storing bearer tokens in browser localStorage.',
-      'Architected a 4-tier token isolation model (Browser Cookie ↔ Nuxt Server ↔ Redis ↔ Backend API).',
-      'Authored complete TypeScript composables (useBearerAuth), Nitro route handlers, and SSR session hydrators.',
-      'Published and maintained open-source developer documentation and interactive playground.',
+    id: 'wgma-website',
+    name: 'Weija-Gbawe Municipal Assembly Website',
+    category: 'Government',
+    categoryType: 'civic',
+    tagline: 'Official Municipal Web Portal & Citizen Digital Services',
+    shortDescription: 'Official government web platform and digital services portal for the Weija-Gbawe Municipal Assembly, providing citizens with civic information, departments, and public services.',
+    overview: 'The official web portal for the Weija-Gbawe Municipal Assembly (WGMA) serves as the primary digital gateway for the municipality, communicating government announcements, public projects, departmental directories, revenue services, and civic resources.',
+    myRole: 'Programming Assistant / Web Developer',
+    technologies: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML/CSS', 'Nginx'],
+    impact: 'Modernized public-sector digital service delivery and public information accessibility for municipal citizens, assembly members, and business stakeholders.',
+    majorFeatures: [
+      'Municipal news & public notice broadcasting system',
+      'Departmental directories, service guides, and fee structures',
+      'Administrative content management workflows for municipal officers',
+      'Citizen feedback and civic inquiry routing channels',
     ],
-    githubUrl: 'https://github.com/paaqwesilowelltetteh/nuxt-bearer-auth',
-    image: '/images/open-source-thumbnail.jpg',
+    workPoints: [
+      'Contributed to backend development and website maintenance using PHP and Laravel.',
+      'Structured and maintained relational database content for departmental records and notices.',
+      'Implemented administrative publishing workflows and public citizen information interfaces.',
+      'Maintained server uptime and assisted municipal departments with digital services support.',
+    ],
+    liveUrl: 'https://wgma.gov.gh',
     featured: true,
-    isOpenSource: true,
+  },
+  {
+    id: 'abnma-website',
+    name: 'Ablekuma North Municipal Assembly',
+    category: 'Freelance',
+    categoryType: 'civic',
+    tagline: 'Government Municipal Web Platform & Civic Portal',
+    shortDescription: 'Freelance public-sector web project developed for the Ablekuma North Municipal Assembly to deliver official civic communications, departments, and digital services.',
+    overview: 'A public-sector web platform created for the Ablekuma North Municipal Assembly (ABNMA), establishing an authoritative online presence for municipal administration, citizen information, public notifications, and community development updates.',
+    myRole: 'Freelance Software Developer',
+    technologies: ['PHP', 'Laravel', 'MySQL', 'JavaScript', 'HTML/CSS', 'Web Development'],
+    impact: 'Established a reliable, accessible municipal web portal for community residents, local businesses, and government stakeholders.',
+    majorFeatures: [
+      'Civic announcements, press releases, and executive municipal updates',
+      'Municipal permit and service information procedures',
+      'Departmental directory and official contact channels',
+      'Responsive, accessible civic layout for mobile and desktop access',
+    ],
+    workPoints: [
+      'Developed and deployed the public municipal web portal.',
+      'Designed structured navigation for civic services, community initiatives, and public notices.',
+      'Structured content layout for municipal departments, leadership, and public reports.',
+      'Ensured responsive performance across mobile and desktop devices.',
+    ],
+    liveUrl: 'https://abnma.gov.gh/',
+    featured: true,
+  },
+  {
+    id: 'wgma-bulk-sms',
+    name: 'WGMA Bulk SMS System',
+    category: 'Internal System',
+    categoryType: 'communication',
+    tagline: 'Municipal Stakeholder & Citizen Broadcast Platform',
+    shortDescription: 'A targeted broadcast communication system developed for the Weija-Gbawe Municipal Assembly to send bulk SMS notifications to citizens, assembly members, and stakeholders.',
+    overview: 'The WGMA Bulk SMS System was engineered to streamline urgent municipal communications, assembly convocation notices, community advisories, and revenue notifications to segmented contact groups across the municipality.',
+    myRole: 'Programming Assistant / Backend Developer',
+    technologies: ['PHP', 'Laravel', 'MySQL', 'REST APIs', 'Queue Processing'],
+    impact: 'Enabled rapid, segmented SMS notifications for assembly convocations, community advisories, and civic notices across the municipality.',
+    majorFeatures: [
+      'Contact group management (Assembly members, zonal staff, citizens, traders)',
+      'Scheduled & instant bulk SMS broadcasting with recipient segmentation',
+      'Delivery status logging and transmission audit records',
+      'Message template management for recurring civic advisories and revenue notices',
+    ],
+    workPoints: [
+      'Developed backend messaging controllers and recipient segmentation logic in Laravel.',
+      'Designed MySQL relational schemas for contact groups, message templates, and dispatch logs.',
+      'Built queue-backed batch processing to handle bulk message dispatches efficiently.',
+      'Collaborated with administrative staff to refine operational messaging workflows.',
+    ],
+    featured: true,
+  },
+  {
+    id: 'wgma-inventory',
+    name: 'WGMA Inventory Management System',
+    category: 'Internal System',
+    categoryType: 'inventory',
+    tagline: 'Municipal Asset & Equipment Management Solution',
+    shortDescription: 'An internal inventory and asset management application engineered for the Weija-Gbawe Municipal Assembly to track municipal equipment, stock levels, and departmental allocations.',
+    overview: 'An internal enterprise system built to manage and audit physical municipal assets, office inventory, and equipment allocations across administrative departments within the Weija-Gbawe Municipal Assembly.',
+    myRole: 'Programming Assistant / Backend Developer',
+    technologies: ['PHP', 'Laravel', 'MySQL', 'Relational Database Design', 'Blade'],
+    impact: 'Streamlined municipal asset tracking, reduced equipment misplacement, and provided transparent departmental inventory auditing.',
+    majorFeatures: [
+      'Asset categorization, tagging, serial number indexing, and status tracking',
+      'Departmental requisition, approval, and equipment issuance workflows',
+      'Low-stock alerts, consumable monitoring, and reorder tracking',
+      'Comprehensive audit trails and inventory reconciliation reports',
+    ],
+    workPoints: [
+      'Designed normalized database tables to model assets, departments, requisitions, and audit logs.',
+      'Implemented backend business logic for stock adjustments, issuance approvals, and returns.',
+      'Built administrative interfaces for asset managers to generate departmental inventory reports.',
+      'Participated in user acceptance testing and staff orientation.',
+    ],
+    featured: true,
   },
 ]
 
