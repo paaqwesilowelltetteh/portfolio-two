@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Briefcase, Calendar, MapPin, Award, CheckCircle2 } from '@lucide/vue'
 import { experiences } from '~/data/portfolio'
+import { computed } from "vue";
 
 const yearsOfExperience = computed(() => {
   return new Date().getFullYear() - 2019

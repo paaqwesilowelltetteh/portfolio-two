@@ -1,3 +1,5 @@
+import { computed } from 'vue'
+
 export const yearsOfExperience = computed(() => {
   return new Date().getFullYear() - 2019
 })
