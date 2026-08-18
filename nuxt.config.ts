@@ -7,6 +7,8 @@ export default (defineNuxtConfig as any)({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     '@nuxt/image',
+    '@vercel/speed-insights',
+    '@vercel/analytics'
   ],
 
   app: {
